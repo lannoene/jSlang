@@ -1,0 +1,24 @@
+clearscreen?;
+
+variablen?"i = 0";
+variablen?"initialTime = @GetTime";
+
+print?"Time now: ";
+print?"@GetTime\n";
+label?"loopStart";
+
+if?i < 1000;
+    add?i + 1;
+    print?i;
+    print?"\n";
+    jump?loopStart;
+}?else;
+    variablen?"dateNow = 0";
+    setvar?"dateNow = %GetTime";
+    print?"Done: current time: ";
+    print?dateNow;
+    print?"\n";
+    print?"Difference: ";
+    add?dateNow + -@GetTime;
+    print?dateNow;
+}?;

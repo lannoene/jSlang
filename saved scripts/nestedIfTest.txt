@@ -1,0 +1,20 @@
+clearscreen?;
+
+variablen?"userAge = ";
+input?"Input age", userAge;
+
+label?hello;
+
+if? userAge == 15;
+    print?"You are my age. Epic!\n";
+}?else;
+    if? userAge < 15;
+        print?"You will someday blossom into an amazing person...\n";
+    }?else;
+        if? 20 < userAge;
+            print?"An older person (above 20)... EWWWW!";
+        }?else;
+            print?"An older person below (or equal to) 20.";
+        }?;
+    }?;
+}?;

@@ -1,0 +1,41 @@
+clearscreen?;
+
+variablen?"i = 0"; c?"A general i var for use in loops i guess. also, the c func is for comments";
+variablen?"j = 0";
+variablen?"playerX = 0";
+variablen?"playerY = 0";
+
+label?"gameLoop";
+clearscreen?;
+
+input?"Input new player x", playerX;
+input?"Input new player y (type -1 to quit)", playerY;
+if?playerY == -1;
+	quit?;
+}?;
+setvar?"i = 0";
+label?"1forLoopStart";
+setvar?"j = 0";
+label?"2forLoopStart";
+if?i < 3;
+    if?j < 3;
+        if?j == playerX;
+			if?i == playerY;
+				print?"x"; c?"an issue with my if implimentation requires that i jump after every print call to avoid jankyness. i still gotta fix that... :(";
+				add?j + 1;
+				jump?2forLoopStart;
+			}?else;
+				print?"_";
+			add?j + 1;
+			jump?2forLoopStart;
+			}?;
+        }?else;
+            print?"_";
+			add?j + 1;
+			jump?2forLoopStart;
+        }?;
+    }?;
+    print?"\n";
+    add?i + 1;
+    jump?1forLoopStart;
+}?;
