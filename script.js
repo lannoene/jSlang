@@ -239,8 +239,10 @@ function run(input) {
 				varKey.forEach((item2, index2) => {
 					if (takeAwayQuotes[0] === varKey[0][index2]) {
 						if (varKey[TYPE][index2] == INTEGER) {
-							
-							varKey[VALUE][index2] += Number(takeAwayQuotes[1]);
+							if (find_variable(varKey[VALUE][index2], varKey) !== false) {
+								varKey[VALUE][index2] += Number(varKey[VALUE][find_variable(takeAwayQuotes[1], varKey)]);
+							} else
+								varKey[VALUE][index2] += Number(takeAwayQuotes[1]);
 						} else if (varKey[TYPE][index2] == STRING)
 							if (find_variable(varKey[VALUE][index2]) !== false) {
 								varKey[VALUE][index2] += Number(varKey[VALUE][find_variable(takeAwayQuotes[1])]);
